@@ -1,6 +1,6 @@
 # Progress FE
 
-Main Layout:
+Step 1 - Layout:
 - All Hackathon (DONE) 👌
 - Details Hackathon (On Progress)
 - Register to Hackathon
@@ -9,6 +9,8 @@ Main Layout:
 - Quest
 - My Progress
 - Explore Course
+
+Step 2 - Dressing: (Waiting for step 1 to complete)
 
 # Next.js & HeroUI Template
 
