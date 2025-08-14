@@ -1,3 +1,15 @@
+# Progress FE
+
+Main Layout:
+- All Hackathon (DONE) 👌
+- Details Hackathon (On Progress)
+- Register to Hackathon
+- Dashboard (On Progess)
+- Project Archive
+- Quest
+- My Progress
+- Explore Course
+
 # Next.js & HeroUI Template
 
 This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
