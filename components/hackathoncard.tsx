@@ -94,50 +94,55 @@ export const HackathonCard = ({ url, title, status, description, deadline, techS
 
   return (
     <Link href={url} className="block group">
-      <div className="rounded-xl border-1 border-gray-200 px-6 py-6 hover:bg-gray-50 flex gap-4 justify-between">
-        <div className="flex flex-col">
-          <div className="flex gap-3 items-center mb-3">
-            <h1 className="font-bold">{title}</h1>
-            <div className={`${statusClass} text-xs px-3 py-0.5 rounded-medium`}>{status}</div>
-          </div>
-          <p className="text-slate-600 text-sm mb-4">{description}</p>
-          <div className="flex gap-10 mb-3">
-            <div>
-              <div className="flex gap-2 mb-1">
-                <ClockIcon className={IconClass} />
-                <p className="text-xs text-slate-400">Registration Close</p>
-              </div>
-              <p className="text-sm font-bold">{deadline}</p>
-            </div>
-            <div>
-              <div className="flex gap-2 mb-1">
-                <CodeIcon className={IconClass} />
-                <p className="text-xs text-slate-400">Tech Stack</p>
-              </div>
-              <p className="text-sm font-bold">{techStack}</p>
-            </div>
-            <div>
-              <div className="flex gap-2 mb-1">
-                <BoltIcon className={IconClass} />
-                <p className="text-xs text-slate-400">Level</p>
-              </div>
-              <p className="text-sm font-bold">{level}</p>
-            </div>
-            <div>
-              <div className="flex gap-2 mb-1">
-                <MoneyIcon className={IconClass} />
-                <p className="text-xs text-slate-400">Total Prize</p>
-              </div>
-              <p className="text-sm font-bold">{totalPrize}</p>
-            </div>
-          </div>
-          <div className="mt-auto flex gap-2">
-            <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{eventLocation}</div>
-            <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{participant}</div>
-          </div>
+      <div className="rounded-xl border-1 border-gray-200 px-6 py-6 hover:bg-gray-50 hover:border-primary-200 relative overflow-hidden">
+        <div className="custom-bg absolute top-0 h-full w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-auto left-0 top-0 h-[500px] w-[500px] translate-x-[20%] translate-y-[20%] rounded-full bg-primary opacity-20 blur-[100px]"></div>
         </div>
-        <div className="w-[40%] min-w-[40%] rounded-xl overflow-hidden">
-          <img src="https://placehold.co/600x250" className="w-full max-w-full" alt="" />
+        <div className="relative flex gap-4 justify-between">
+          <div className="flex flex-col relative">
+            <div className="flex gap-3 items-center mb-3">
+              <h1 className="font-bold">{title}</h1>
+              <div className={`${statusClass} text-xs px-3 py-0.5 rounded-medium`}>{status}</div>
+            </div>
+            <p className="text-slate-600 text-sm mb-4">{description}</p>
+            <div className="flex gap-10 mb-3">
+              <div>
+                <div className="flex gap-2 mb-1">
+                  <ClockIcon className={IconClass} />
+                  <p className="text-xs text-slate-400">Registration Close</p>
+                </div>
+                <p className="text-sm font-bold">{deadline}</p>
+              </div>
+              <div>
+                <div className="flex gap-2 mb-1">
+                  <CodeIcon className={IconClass} />
+                  <p className="text-xs text-slate-400">Tech Stack</p>
+                </div>
+                <p className="text-sm font-bold">{techStack}</p>
+              </div>
+              <div>
+                <div className="flex gap-2 mb-1">
+                  <BoltIcon className={IconClass} />
+                  <p className="text-xs text-slate-400">Level</p>
+                </div>
+                <p className="text-sm font-bold">{level}</p>
+              </div>
+              <div>
+                <div className="flex gap-2 mb-1">
+                  <MoneyIcon className={IconClass} />
+                  <p className="text-xs text-slate-400">Total Prize</p>
+                </div>
+                <p className="text-sm font-bold">{totalPrize}</p>
+              </div>
+            </div>
+            <div className="mt-auto flex gap-2">
+              <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{eventLocation}</div>
+              <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{participant}</div>
+            </div>
+          </div>
+          <div className="w-[40%] min-w-[40%] rounded-xl overflow-hidden">
+            <img src="https://placehold.co/600x250" className="w-full max-w-full" alt="" />
+          </div>
         </div>
       </div>
     </Link>
