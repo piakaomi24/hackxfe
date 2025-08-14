@@ -10,6 +10,8 @@ import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
 
+import { ScrollShadow } from "@heroui/scroll-shadow";
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -51,16 +53,16 @@ export default function RootLayout({
         />
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex items-start h-full">
-            <div className="w-75 h-screen px-3 py-10 bg-gray-50 border-e-1 border-e-gray-200 sticky top-0">
+            <div className="w-75 h-screen px-3 py-10 border-e-1 border-e-gray-200 sticky top-0">
               <div className="w-full">
                 <Sidebar />
               </div>
             </div>
             <div className="w-full max-h-screen flex flex-col">
               <Navbar />
-              <main className="w-full flex-grow overflow-y-scroll">
+              <ScrollShadow className="w-full flex-grow overflow-y-scroll" size={100}>
                 {children}
-              </main>
+              </ScrollShadow>
             </div>
           </div>
         </Providers>

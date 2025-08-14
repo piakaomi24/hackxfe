@@ -202,7 +202,8 @@ export const ListboxWrapper = ({ children }: PropsWithChildren) => (
 export const Sidebar = () => {
   // const iconClasses = "text-base text-default-400 pointer-events-none shrink-0 data-[hover=true]:border-gray-200";
   const iconClasses = "pointer-events-none shrink-0";
-  const listItemBaseClasses = "data-[hover=true]:bg-gray-100 border-1 border-transparent data-[hover=true]:border-gray-200 text-gray-600 data-[hover=true]:text-primary";
+  const listItemBaseClasses = "data-[hover=true]:bg-gray-50 border-1 border-transparent data-[hover=true]:border-gray-200 text-gray-500 data-[hover=true]:text-primary";
+  const listItemActiveClasses = "bg-primary-50 text-primary border-1 border-primary-100 shadow shadow-primary-100";
   const listItemTitleClasses = "font-normal";
 
   const menuCommon = [
@@ -225,7 +226,7 @@ export const Sidebar = () => {
   return (
     <ListboxWrapper>
       <div className="mb-10">
-        <h1 className="font-extrabold text-xl">HackXLayout</h1>
+        <h1 className="font-extrabold text-xl">Hack<span className="text-primary">X</span><span className="text-primary-300">Layout</span></h1>
       </div>
       <Listbox aria-label="Sidebar Menu">
         {menuCommon.map((item) => {
@@ -239,7 +240,7 @@ export const Sidebar = () => {
               href={item.href}
               startContent={<Icon className={iconClasses} />}
               classNames={{
-                base: `${listItemBaseClasses} ${isActive ? "bg-primary-50 text-primary border-1 border-primary-100" : ""}`,
+                base: `${listItemBaseClasses} ${isActive ? listItemActiveClasses : ""}`,
                 title: listItemTitleClasses,
               }}
             >
@@ -264,7 +265,7 @@ export const Sidebar = () => {
               href={item.href}
               startContent={<Icon className={iconClasses} />}
               classNames={{
-                base: `${listItemBaseClasses} ${isActive ? "bg-primary-50 text-primary border-1 border-primary-100" : ""}`,
+                base: `${listItemBaseClasses} ${isActive ? listItemActiveClasses : ""}`,
                 title: listItemTitleClasses,
               }}
             >
@@ -289,7 +290,7 @@ export const Sidebar = () => {
               href={item.href}
               startContent={<Icon className={iconClasses} />}
               classNames={{
-                base: `${listItemBaseClasses} ${isActive ? "bg-primary-50 text-primary border-1 border-primary-100" : ""}`,
+                base: `${listItemBaseClasses} ${isActive ? listItemActiveClasses : ""}`,
                 title: listItemTitleClasses,
               }}
             >

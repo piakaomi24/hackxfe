@@ -87,9 +87,9 @@ export const HackathonCard = ({ url, title, status, description, deadline, techS
   const IconClass = "text-slate-300";
   const statusClass =
     status?.toLowerCase() === "live"
-      ? "bg-green-50 text-green-600"
+      ? "bg-green-50 text-green-600 shadow-xs shadow-success-200"
       : status?.toLowerCase() === "ended"
-        ? "bg-red-50 text-red-600 font-bold"
+        ? "bg-danger-50 text-danger-600 shadow-xs shadow-danger-200 font-bold"
         : "bg-gray-50 text-gray-600";
 
   return (
@@ -101,7 +101,7 @@ export const HackathonCard = ({ url, title, status, description, deadline, techS
             <div className={`${statusClass} text-xs px-3 py-0.5 rounded-medium`}>{status}</div>
           </div>
           <p className="text-slate-600 text-sm mb-4">{description}</p>
-          <div className="flex gap-10">
+          <div className="flex gap-10 mb-3">
             <div>
               <div className="flex gap-2 mb-1">
                 <ClockIcon className={IconClass} />
@@ -132,8 +132,8 @@ export const HackathonCard = ({ url, title, status, description, deadline, techS
             </div>
           </div>
           <div className="mt-auto flex gap-2">
-            <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl">{eventLocation}</div>
-            <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl">{participant}</div>
+            <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{eventLocation}</div>
+            <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{participant}</div>
           </div>
         </div>
         <div className="w-[40%] min-w-[40%] rounded-xl overflow-hidden">

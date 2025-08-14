@@ -1,4 +1,4 @@
-import {heroui} from "@heroui/theme"
+import { heroui } from "@heroui/theme"
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -16,7 +16,28 @@ const config = {
     },
   },
   darkMode: "false",
-  plugins: [heroui()],
+  plugins: [heroui({
+    themes: {
+      light: {
+        colors: {
+          primary: {
+            50: '#f2f8fd',
+            100: '#e4effa',
+            200: '#c3dff4',
+            300: '#8ec4eb',
+            400: '#52a6de',
+            500: '#2b8bcc',
+            600: '#18588c',
+            700: '#184c74',
+            800: '#194061',
+            900: '#112940',
+            DEFAULT: "#1a659e",
+            foreground: "#ffffff",
+          },
+        },
+      },
+    },
+  })],
 }
 
 module.exports = config;

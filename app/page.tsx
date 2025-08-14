@@ -161,7 +161,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-5 mt-5">
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="HackX Buildathon"
             status="Live"
             description="Building the first open-source hackathon platform where everything lives on IPFS"
@@ -172,7 +172,7 @@ export default function Home() {
             eventLocation="Online"
             participant="111+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="Solana x AI Students Hack"
             status="Live"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -183,7 +183,7 @@ export default function Home() {
             eventLocation="Online"
             participant="400+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="Thebuidlathon"
             status="Live"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -194,7 +194,7 @@ export default function Home() {
             eventLocation="Online"
             participant="400+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="MetaMask Embedded Wallets & Solana Dev Cook-Off"
             status="Live"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -205,7 +205,7 @@ export default function Home() {
             eventLocation="Online"
             participant="400+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="HDBank Hackathon - Galaxy of Innovation 2025"
             status="Live"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -234,7 +234,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-5 mt-5">
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="HackX Buildathon"
             status="Ended"
             description="Building the first open-source hackathon platform where everything lives on IPFS"
@@ -245,7 +245,7 @@ export default function Home() {
             eventLocation="Online"
             participant="111+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="Solana x AI Students Hack"
             status="Ended"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -256,7 +256,7 @@ export default function Home() {
             eventLocation="Online"
             participant="400+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="Thebuidlathon"
             status="Ended"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -267,7 +267,7 @@ export default function Home() {
             eventLocation="Online"
             participant="400+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="MetaMask Embedded Wallets & Solana Dev Cook-Off"
             status="Ended"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
@@ -278,7 +278,7 @@ export default function Home() {
             eventLocation="Online"
             participant="400+ participants" />
           <HackathonCard
-            url="hackathon/details"
+            url="hackathon"
             title="HDBank Hackathon - Galaxy of Innovation 2025"
             status="Ended"
             description="Nigeria's premier student hackathon focused on Solana development and AI agents"
