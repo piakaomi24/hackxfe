@@ -90,11 +90,11 @@ export const HackathonCard = ({ url, title, status, description, deadline, techS
       ? "bg-green-50 text-green-600 shadow-xs shadow-success-200"
       : status?.toLowerCase() === "ended"
         ? "bg-danger-50 text-danger-600 shadow-xs shadow-danger-200 font-bold"
-        : "bg-gray-50 text-gray-600";
+        : "bg-warning-50 text-warning-600 shadow-xs shadow-warning-200 font-bold";
 
   return (
     <Link href={url} className="block group">
-      <div className="rounded-xl border-1 border-gray-200 px-6 py-6 hover:bg-gray-50 hover:border-primary-200 relative overflow-hidden">
+      <div className="rounded-xl border-1 border-gray-200 px-6 py-6 hover:bg-primary-50 hover:border-primary-200 relative overflow-hidden">
         <div className="custom-bg absolute top-0 h-full w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-auto left-0 top-0 h-[500px] w-[500px] translate-x-[20%] translate-y-[20%] rounded-full bg-primary opacity-20 blur-[100px]"></div>
         </div>
@@ -138,6 +138,9 @@ export const HackathonCard = ({ url, title, status, description, deadline, techS
             <div className="mt-auto flex gap-2">
               <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{eventLocation}</div>
               <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">{participant}</div>
+              {status?.toLowerCase() === "voting" && (
+                <div className="bg-primary-50 px-3 py-1 text-xs text-primary-600 rounded-4xl shadow-sm shadow-primary-100">Judges Only</div>
+              )}
             </div>
           </div>
           <div className="w-[40%] min-w-[40%] rounded-xl overflow-hidden">

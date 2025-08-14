@@ -60,7 +60,7 @@ export const ExploreCourseIcon = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export const MyHackathonIcon = (props: SVGProps<SVGSVGElement>) => {
+export const DashboardIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       aria-hidden="true"
@@ -216,7 +216,7 @@ export const Sidebar = () => {
   ];
 
   const menuBuild = [
-    { key: "hackathon", label: "My Hackathon", icon: MyHackathonIcon, href: "/my-hackathon" },
+    { key: "hackathon", label: "Dashboard", icon: DashboardIcon, href: "/dashboard" },
     { key: "explore-hackathon", label: "Explore Hackathon", icon: ExploreHackathonIcon, href: "/" },
     { key: "archive", label: "Project Archive", icon: ProjectArchiveIcon, href: "/archive" },
   ];
@@ -226,7 +226,7 @@ export const Sidebar = () => {
   return (
     <ListboxWrapper>
       <div className="mb-10">
-        <h1 className="font-extrabold text-xl">Hack<span className="text-primary">X</span><span className="text-primary-300">Layout</span></h1>
+        <h1 className="font-extrabold text-xl">Hack<span className="text-primary">X</span><span className="text-gray-400">Layout</span></h1>
       </div>
       <Listbox aria-label="Sidebar Menu">
         {menuCommon.map((item) => {
