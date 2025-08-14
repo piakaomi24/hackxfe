@@ -10,7 +10,8 @@ Step 1 - Layout:
 - My Progress
 - Explore Course
 
-Step 2 - Dressing: (Waiting for step 1 to complete)
+Step 2 - Finishing: (Waiting for step 1 to complete)
+Step 3 - Integrating: (Waiting for step 2 to complete)
 
 # Next.js & HeroUI Template
 
