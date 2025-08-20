@@ -3,8 +3,10 @@
 import { Button } from "@heroui/button";
 import { SVGProps } from "react";
 import { HackathonCard } from "@/components/hackathoncard";
+import Link from "next/link";
+import { ProjectCard } from "@/components/projectcard";
 
-export const TerminalIcon = (props: SVGProps<SVGSVGElement>) => {
+export const FolderIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       aria-hidden="true"
@@ -16,23 +18,7 @@ export const TerminalIcon = (props: SVGProps<SVGSVGElement>) => {
       width="1em"
       {...props}
     >
-      <path fill="currentColor" fillRule="evenodd" d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clipRule="evenodd" />
-    </svg>
-  );
-};
-export const ChemiIcon = (props: SVGProps<SVGSVGElement>) => {
-  return (
-    <svg
-      aria-hidden="true"
-      fill="none"
-      focusable="false"
-      height="1em"
-      role="presentation"
-      viewBox="0 0 24 24"
-      width="1em"
-      {...props}
-    >
-      <path fill="currentColor" fillRule="evenodd" d="M10.5 3.798v5.02a3 3 0 0 1-.879 2.121l-2.377 2.377a9.845 9.845 0 0 1 5.091 1.013 8.315 8.315 0 0 0 5.713.636l.285-.071-3.954-3.955a3 3 0 0 1-.879-2.121v-5.02a23.614 23.614 0 0 0-3 0Zm4.5.138a.75.75 0 0 0 .093-1.495A24.837 24.837 0 0 0 12 2.25a25.048 25.048 0 0 0-3.093.191A.75.75 0 0 0 9 3.936v4.882a1.5 1.5 0 0 1-.44 1.06l-6.293 6.294c-1.62 1.621-.903 4.475 1.471 4.88 2.686.46 5.447.698 8.262.698 2.816 0 5.576-.239 8.262-.697 2.373-.406 3.092-3.26 1.47-4.881L15.44 9.879A1.5 1.5 0 0 1 15 8.818V3.936Z" clipRule="evenodd" />
+      <path fill="currentColor" d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM1.5 10.146V6a3 3 0 0 1 3-3h5.379a2.25 2.25 0 0 1 1.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 0 1 3 3v1.146A4.483 4.483 0 0 0 19.5 9h-15a4.483 4.483 0 0 0-3 1.146Z" />
     </svg>
   );
 };
@@ -41,15 +27,55 @@ export default function DashboardPage() {
   return (
     <section>
       <div className="container mx-auto max-w-6xl py-10">
-        <div className="flex justify-between mt-15">
+        <div className="flex justify-between">
           <div className="gap-4 grid grid-cols-8">
             <div className="col-span-4">
-              <h1 className="text-slate-800 text-2xl mb-3 font-bold flex items-center gap-2"><TerminalIcon className="text-primary text-lg" />Registered Hackathons</h1>
+              <h1 className="text-slate-800 text-2xl mb-3 font-bold flex items-center gap-2">Active Projects</h1>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 mt-5">
+        <div className="grid grid-cols-12 gap-5 mt-2">
+          <div className="col-span-3">
+            <div className="p-2 bg-primary-50 h-full rounded-xl">
+              <Link href='' className="group h-full border-2 border-dashed border-primary-300 p-5 rounded-xl flex flex-col items-center justify-center gap-2">
+                <FolderIcon className="text-7xl text-primary-100 mt-auto" />
+                <p className="mt-auto text-primary font-bold">Create new project</p>
+              </Link>
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-4 lg:col-span-3">
+            <ProjectCard
+              url="hackathon"
+              title="HackX Buildathon"
+              description="Building the first open-source hackathon platform where everything lives on IPFS"
+              lastEdited="6 days ago" />
+          </div>
+          <div className="col-span-12 md:col-span-4 lg:col-span-3">
+            <ProjectCard
+              url="hackathon"
+              title="HackX Buildathon"
+              description="Building the first open-source hackathon platform where everything lives on IPFS"
+              lastEdited="6 days ago" />
+          </div>
+          <div className="col-span-12 md:col-span-4 lg:col-span-3">
+            <ProjectCard
+              url="hackathon"
+              title="HackX Buildathon"
+              description="Building the first open-source hackathon platform where everything lives on IPFS"
+              lastEdited="6 days ago" />
+          </div>
+        </div>
+
+        <div className="flex justify-between mt-15">
+          <div className="gap-4 grid grid-cols-8">
+            <div className="col-span-4">
+              <h1 className="text-slate-800 text-2xl mb-3 font-bold flex items-center gap-2">Registered Hackathons</h1>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-5 mt-2">
           <HackathonCard
             url="hackathon"
             title="HackX Buildathon"
@@ -60,18 +86,19 @@ export default function DashboardPage() {
             level="General"
             totalPrize="22,100 USD"
             eventLocation="Online"
-            participant="111+ participants" />
+            participant="111+ participants"
+            isRegistered={true} />
         </div>
 
         <div className="flex justify-between mt-15">
           <div className="gap-4 grid grid-cols-8">
             <div className="col-span-4">
-              <h1 className="text-slate-800 text-2xl mb-3 font-bold flex items-center gap-2"><ChemiIcon className="text-warning text-lg" />Open Voting</h1>
+              <h1 className="text-slate-800 text-2xl mb-3 font-bold flex items-center gap-2">Open Voting</h1>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 mt-5">
+        <div className="flex flex-col gap-5 mt-2">
           <HackathonCard
             url="hackathon"
             title="HackX Buildathon"

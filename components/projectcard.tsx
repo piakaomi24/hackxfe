@@ -101,107 +101,67 @@ export const EllipsisIcon = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+export const LinkIcon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height="1em"
+      role="presentation"
+      viewBox="0 0 24 24"
+      width="1em"
+      {...props}
+    >
+      <path fill="currentColor" fillRule="evenodd" d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z" clipRule="evenodd" />
+    </svg>
+  );
+};
 
-type HackathonCardProps = {
+type ProjectCardProps = {
   url: string;
   title: string;
-  status: string;
   description: string;
-  deadline: string;
-  techStack: string;
-  level: string;
-  totalPrize: string;
-  eventLocation: string;
-  participant: string;
-  isRegistered?: boolean;
+  lastEdited: string;
 }
 
-export const HackathonCard = ({ url, title, status, description, deadline, techStack, level, totalPrize, eventLocation, participant, isRegistered = false }: HackathonCardProps) => {
+export const ProjectCard = ({ url, title, description, lastEdited }: ProjectCardProps) => {
 
   const IconClass = "text-slate-300";
-  const statusClass =
-    status?.toLowerCase() === "live"
-      ? "bg-green-50 text-green-600 shadow-xs shadow-success-200"
-      : status?.toLowerCase() === "ended"
-        ? "bg-danger-50 text-danger-600 shadow-xs shadow-danger-200 font-bold"
-        : "bg-warning-50 text-warning-600 shadow-xs shadow-warning-200 font-bold";
 
   return (
-    <Link href={url} className="block group p-2 bg-primary-50 rounded-xl">
-      <div className="bg-white rounded-xl border-1 border-primary-200 px-5 py-4 hover:bg-gray-50 hover:border-primary-200 relative overflow-hidden">
+    <Link href={url} className="block p-2 bg-primary-50 rounded-xl w-full">
+      <div className="bg-white rounded-xl h-full group border-1 border-primary-200 px-4 py-4 hover:bg-gray-50 hover:border-primary-200 relative overflow-hidden">
         <div className="custom-bg absolute top-0 h-full w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-auto left-0 top-0 h-[500px] w-[500px] translate-x-[20%] translate-y-[20%] rounded-full bg-gray opacity-20 blur-[100px]"></div>
         </div>
-        <div className="relative flex gap-10 justify-between">
-          <div className="flex flex-col relative grow">
-            <div className="mb-3 border-b-1 border-b-gray-100 pb-3">
-              <div className="flex gap-3 items-center mb-2">
-                <h1 className="font-bold">{title}</h1>
-                <div className={`${statusClass} text-xs px-3 py-0.5 rounded-medium`}>{status}</div>
-              </div>
-              <p className="text-primary text-xs">07 August 2025 - 1 December 2025</p>
+        <div className="flex flex-col">
+          <div className="relative flex gap-4 mb-3">
+            <div className="w-[50px] min-w-[50px] aspect-square rounded-xl overflow-hidden">
+              <img src="https://placehold.co/600x250" className="w-full max-w-full h-full object-cover" alt="" />
             </div>
-            <p className="text-slate-600 text-sm mb-4">{description}</p>
-            <div className="flex justify-between mb-4">
-              <div>
-                <div className="flex gap-2 mb-1">
-                  <ClockIcon className={IconClass} />
-                  <div>
-                    <p className="text-2xs text-slate-400">Registration Close</p>
-                    <p className="text-sm font-bold">{deadline}</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex gap-2 mb-1">
-                  <CodeIcon className={IconClass} />
-                  <div>
-                    <p className="text-2xs text-slate-400">Tech Stack</p>
-                    <p className="text-sm font-bold">{techStack}</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex gap-2 mb-1">
-                  <BoltIcon className={IconClass} />
-                  <div>
-                    <p className="text-2xs text-slate-400">Level</p>
-                    <p className="text-sm font-bold">{level}</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex gap-2 mb-1">
-                  <MoneyIcon className={IconClass} />
-                  <div>
-                    <p className="text-2xs text-slate-400">Total Prize</p>
-                    <p className="text-sm font-bold">{totalPrize}</p>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h1 className="font-bold text-sm mb-2">{title}</h1>
+              <div className="rounded-full text-2xs text-success-800 px-2 bg-success-50 border-1 border-primary-200 w-fit">07 August 2025</div>
             </div>
-            {isRegistered === false && (
-              <div className="mt-auto flex gap-3">
-                <div className="bg-primary-50 px-3 py-1 text-xs text-primary-900 rounded-4xl shadow-sm shadow-primary-200">{eventLocation}</div>
-                <div className="bg-primary-50 px-3 py-1 text-xs text-primary-900 rounded-4xl shadow-sm shadow-primary-200">{participant}</div>
-                {status?.toLowerCase() === "voting" && (
-                  <div className="bg-primary-50 px-3 py-1 text-xs text-primary-900 rounded-4xl shadow-sm shadow-primary-200">Judges Only</div>
-                )}
-              </div>
-            )}
-            {isRegistered === true && (
-              <div className="mt-auto flex gap-2">
-                <Button color="primary" size="sm" endContent={<ArrowRightIcon />} variant="solid">
-                  Submit a project
-                </Button>
-              </div>
-            )}
           </div>
-          <div className="w-[40%] min-w-[40%]">
-            <img src="https://placehold.co/600x250" className="w-full max-w-full rounded-xl" alt="" />
+          <div className="flex flex-col relative mb-5 border-t-1 border-t-gray-200 pt-3">
+            <p className="text-slate-400 text-2xs mb-3">Description</p>
+            <p className="text-slate-600 text-xs">{description}</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              <div className="rounded-full text-2xs text-gray-800 px-2 border-1 border-gray-200 w-fit font-bold">Next.js</div>
+              <div className="rounded-full text-2xs text-gray-800 px-2 border-1 border-gray-200 w-fit font-bold">Tailwind</div>
+              <div className="rounded-full text-2xs text-gray-800 px-2 border-1 border-gray-200 w-fit font-bold">Express.js</div>
+              <div className="rounded-full text-2xs text-gray-800 px-2 border-1 border-gray-200 w-fit font-bold">Solidity</div>
+            </div>
+          </div>
+          <div className="mt-auto flex justify-between border-t-1 border-t-gray-200 pt-3">
+            <p className="text-primary text-xs">Last Edited</p>
+            <p className="text-primary text-xs font-bold">6 days ago</p>
           </div>
         </div>
       </div>
+      <p className="text-xs text-primary-900 my-3 mb-1 ms-2 font-bold">2 Hacks registered</p>
     </Link>
   );
 };

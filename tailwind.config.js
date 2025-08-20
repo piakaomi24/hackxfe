@@ -13,6 +13,9 @@ const config = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
+      fontSize: {
+        '2xs': '0.65rem',
+      },
     },
   },
   darkMode: "false",

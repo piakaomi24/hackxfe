@@ -228,7 +228,7 @@ export const Sidebar = () => {
       <div className="mb-10">
         <h1 className="font-extrabold text-xl">Hack<span className="text-primary">X</span><span className="text-gray-400">Layout</span></h1>
       </div>
-      <Listbox aria-label="Sidebar Menu">
+      {/* <Listbox aria-label="Sidebar Menu">
         {menuCommon.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
@@ -248,7 +248,7 @@ export const Sidebar = () => {
             </ListboxItem>
           );
         })}
-      </Listbox>
+      </Listbox> */}
       <div className="flex gap-1 my-3 items-center">
         <p className="text-xs text-gray-400">Learn</p>
         <div className="w-full h-[1px] bg-gray-200"></div>
